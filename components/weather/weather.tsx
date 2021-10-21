@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import useSWR from "swr";
+import { Forecast5Day } from "./forecast5day";
+import { TodayWeather } from "./todayWeather";
 
 const fetcher = (url: any) => fetch(url).then((r) => r.json());
 
@@ -22,17 +24,8 @@ export const Weather: React.FC<Props> = ({ apiKey, city }) => {
 
   return (
     <Box my={10}>
-      <Typography>{data.city.name}</Typography>
-      {data.list.map((weather: any, index: any) => {
-        if (index % 8 === 0) {
-          return (
-            <Box key={index}>
-              <p>{weather.dt_txt}</p>
-              <Typography>{weather.main.temp}</Typography>
-            </Box>
-          );
-        }
-      })}
+      <TodayWeather city={data.city.name} />
+      <Forecast5Day data={data} />
     </Box>
   );
 };
