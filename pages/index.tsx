@@ -16,6 +16,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Tivix - OpenWeatherMap 🌞</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
