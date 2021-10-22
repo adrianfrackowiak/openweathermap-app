@@ -2,6 +2,13 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { formatDate } from "../../functions/functions";
 import { Stats } from "../../interfaces/interfaces";
+import {
+  StyledFlexColCenter,
+  StyledStats,
+  StyledStatsBox,
+  StyledTodayWeather,
+  StyledFlexJstColCenter,
+} from "../../styles/styles";
 
 interface Props {
   city: string;
@@ -11,8 +18,8 @@ interface Props {
 
 export const TodayWeather: React.FC<Props> = ({ city, data, stats }) => {
   return (
-    <Box>
-      <Box mb={10} sx={{ display: "flex", justifyContent: "center" }}>
+    <Box sx={StyledFlexJstColCenter}>
+      <Box mb={10} sx={StyledTodayWeather}>
         <Box>
           <Typography variant="h4">{city}</Typography>
           <Typography>
@@ -29,64 +36,19 @@ export const TodayWeather: React.FC<Props> = ({ city, data, stats }) => {
         </Box>
       </Box>
       {stats && (
-        <Box
-          mb={10}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <Box mb={10} sx={StyledFlexColCenter}>
           <Typography variant="h4">Stats</Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              m={1}
-              sx={{
-                fontWeight: "500",
-                background: "#f5f5f5",
-                borderRadius: "10px",
-                padding: "0.5rem 1rem",
-              }}
-            >
+          <Box sx={StyledStatsBox}>
+            <Typography m={1} sx={StyledStats}>
               Minimum: {stats.minimumValue}&#176;C
             </Typography>
-            <Typography
-              m={1}
-              sx={{
-                fontWeight: "500",
-                background: "#f5f5f5",
-                borderRadius: "10px",
-                padding: "0.5rem 1rem",
-              }}
-            >
+            <Typography m={1} sx={StyledStats}>
               Maximum: {stats.maximumValue}&#176;C
             </Typography>
-            <Typography
-              m={1}
-              sx={{
-                fontWeight: "500",
-                background: "#f5f5f5",
-                borderRadius: "10px",
-                padding: "0.5rem 1rem",
-              }}
-            >
+            <Typography m={1} sx={StyledStats}>
               Mean: {stats.meanValue}&#176;C
             </Typography>
-            <Typography
-              m={1}
-              sx={{
-                fontWeight: "500",
-                background: "#f5f5f5",
-                borderRadius: "10px",
-                padding: "0.5rem 1rem",
-              }}
-            >
+            <Typography m={1} sx={StyledStats}>
               Mode: {stats.modeValue}&#176;C
             </Typography>
           </Box>

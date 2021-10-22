@@ -1,5 +1,4 @@
-import { Grid, Typography } from "@mui/material";
-import { Box, compose } from "@mui/system";
+import { Box } from "@mui/system";
 import { useState } from "react";
 import useSWR from "swr";
 import { Stats } from "../../interfaces/interfaces";
@@ -23,7 +22,7 @@ export const Weather: React.FC<Props> = ({ apiKey, city }) => {
   if (!data) return <div>loading...</div>;
 
   return (
-    <Box width={1} my={10}>
+    <Box width={1} my={6}>
       <TodayWeather city={data.city.name} data={data} stats={stats} />
       <Forecast5Day data={data} setStats={setStats} />
     </Box>

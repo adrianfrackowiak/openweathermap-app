@@ -2,6 +2,11 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { formatDate, mean, mode } from "../../functions/functions";
 import { Forecast } from "../../interfaces/interfaces";
+import {
+  StyledFlexColCenter,
+  StyledForecastBox,
+  StyledForecastDay,
+} from "../../styles/styles";
 
 interface Props {
   data: any;
@@ -62,41 +67,14 @@ export const Forecast5Day: React.FC<Props> = ({ data, setStats }) => {
   if (!data) return <h1>Loading</h1>;
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <Box sx={StyledFlexColCenter}>
       <Typography variant="h4" mb={1} textAlign="center">
         5-Day Weather Forecast
       </Typography>
-      <Box
-        width={1}
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <Box width={1} sx={StyledForecastBox}>
         {stateForecast.map((weather: Forecast, index: number) => {
           return (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "#f5f5f5",
-                borderRadius: "10px",
-                padding: "1rem",
-                marginBottom: { xs: "2rem" },
-                width: { xs: "10rem", md: "8rem" },
-              }}
-            >
+            <Box key={index} sx={StyledForecastDay}>
               <Typography
                 variant="h5"
                 sx={{ marginBottom: "1rem", fontWeight: 600 }}

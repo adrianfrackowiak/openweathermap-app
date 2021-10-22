@@ -1,6 +1,11 @@
 import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import {
+  StyledFlexJstCenter,
+  StyledSearchTextField,
+  StyledSearchButton,
+} from "../../styles/styles";
 
 interface Props {
   city: string;
@@ -14,17 +19,21 @@ export const Search: React.FC<Props> = ({ city, setCity }) => {
     setCity(searchCity);
   };
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
+    <Box sx={StyledFlexJstCenter}>
       <TextField
         id="outlined-basic"
         label="Search city"
         variant="outlined"
         value={searchCity}
         onChange={(e) => setSearchCity(e.target.value)}
+        sx={StyledSearchTextField}
+        InputLabelProps={{
+          style: { color: "#ffffff" },
+        }}
       />
       <Button
         variant="contained"
-        sx={{ marginLeft: "1rem" }}
+        sx={StyledSearchButton}
         onClick={onSearchCity}
       >
         Search

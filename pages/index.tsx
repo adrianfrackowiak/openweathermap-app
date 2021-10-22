@@ -25,6 +25,7 @@ const Home: NextPage = () => {
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
       </Head>
+
       <Container
         maxWidth="md"
         sx={{
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
           padding: "0.5rem",
         }}
       >
-        <Typography variant="h5" component="h1" my={10}>
+        <Typography variant="h5" component="h1" my={6}>
           TIVIX - OpenWeatherMap 🌞
         </Typography>
         <Search city={city} setCity={setCity} />
