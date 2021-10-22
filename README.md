@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tivix - OpenWeatherMap (Recruitment task)
 
-## Getting Started
+Weather APP that shows the 5-day weather forecast for a given city and stats relevant to the weather forecast.
+To get started, simply go to:
 
-First, run the development server:
+```
+https://tivix-openweathermap.vercel.app/
+```
 
-```bash
-npm run dev
-# or
+or in your terminal:
+
+```
+git clone https://github.com/adrianfrackowiak/tivix-openweathermap.git
+cd tivix-openweathermap
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and go to http://localhost:3000
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### How it works
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+You can search city and check the weather. App will show you 5-day weather forecast including:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Morning temperature
+- Day temperature
+- Night temperature
+- Humidity
 
-## Learn More
+Notice, that if current time is for example 18:00, 5-day forecast will show you current weather for morning and day temperature - (because of free api https://openweathermap.org/forecast5).
 
-To learn more about Next.js, take a look at the following resources:
+You can also find some stats for all temperatures like:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Minimum value
+- Maximum value
+- Mean value
+- Mode value
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Tech stack
 
-## Deploy on Vercel
+- ReactJS
+- TypeScript
+- Next.js
+- SWR
+- Material-UI v5
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Desktop](./public/desktop.png)
+![Mobile](./public/mobile.png)
