@@ -14,17 +14,15 @@ interface Props {
 
 export const Weather: React.FC<Props> = ({ apiKey, city }) => {
   const { data, error } = useSWR(
-    `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`,
+    `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`,
     fetcher
   );
-  if (error) return <div>Failed to load posts</div>;
+  if (error) return <div>Failed to load weather</div>;
   if (!data) return <div>loading...</div>;
 
-  console.log(data);
-
   return (
-    <Box my={10}>
-      <TodayWeather city={data.city.name} />
+    <Box width={1} my={10}>
+      <TodayWeather city={data.city.name} data={data} />
       <Forecast5Day data={data} />
     </Box>
   );
