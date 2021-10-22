@@ -5,3 +5,10 @@ export interface Forecast {
   humidity: number;
   date: string;
 }
+
+export interface Stats {
+  minimumValue: number;
+  maximumValue: number;
+  meanValue: number;
+  modeValue: number;
+}
