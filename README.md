@@ -1,4 +1,4 @@
-## Tivix - OpenWeatherMap (Recruitment task)
+# OpenWeatherMap App
 
 Weather APP that shows the 5-day weather forecast for a given city and stats relevant to the weather forecast.
 To get started, simply go to:
@@ -43,6 +43,12 @@ You can also find some stats for all temperatures like:
 - Next.js
 - SWR
 - Material-UI v5
+
+## v2.0.0 - OpenWeatherMap App
+
+
+
+## v1.0.0 - Tivix - OpenWeatherMap (Recruitment task)
 
 ![Desktop](./public/desktop.png)
 ![Mobile](./public/mobile.png)
