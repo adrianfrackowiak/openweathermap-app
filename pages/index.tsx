@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         }}
       >
         <Typography variant="h5" component="h1" my={6}>
-          TIVIX - OpenWeatherMap 🌞
+          OpenWeatherMap - App 🌞
         </Typography>
         <Search city={city} setCity={setCity} />
         <Weather city={city} />

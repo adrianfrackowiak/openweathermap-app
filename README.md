@@ -1,4 +1,4 @@
-# OpenWeatherMap App
+# OpenWeatherMap App v1.2.0
 
 Weather APP that shows the 5-day weather forecast for a given city and stats relevant to the weather forecast.
 To get started, simply go to:
@@ -44,11 +44,9 @@ You can also find some stats for all temperatures like:
 - SWR
 - Material-UI v5
 
-## v2.0.0 - OpenWeatherMap App
+## v1.2.0 - OpenWeatherMap App
 
-
-
-## v1.0.0 - Tivix - OpenWeatherMap (Recruitment task)
+- fix apiKey
 
 ![Desktop](./public/desktop.png)
 ![Mobile](./public/mobile.png)
