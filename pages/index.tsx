@@ -6,9 +6,6 @@ import { Weather } from "../components/weather/weather";
 import { useState } from "react";
 
 const Home: NextPage = () => {
-  const [apiKey, setApiKey] = useState<string>(
-    "fcb45636806adab2dfbc1dc76c85fd64"
-  );
   const [city, setCity] = useState<string>("london");
 
   return (
@@ -39,7 +36,7 @@ const Home: NextPage = () => {
           TIVIX - OpenWeatherMap 🌞
         </Typography>
         <Search city={city} setCity={setCity} />
-        <Weather apiKey={apiKey} city={city} />
+        <Weather city={city} />
       </Container>
     </>
   );

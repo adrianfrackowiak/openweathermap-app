@@ -8,14 +8,13 @@ import { TodayWeather } from "./todayWeather";
 const fetcher = (url: any) => fetch(url).then((r) => r.json());
 
 interface Props {
-  apiKey: string;
   city: string;
 }
 
-export const Weather: React.FC<Props> = ({ apiKey, city }) => {
+export const Weather: React.FC<Props> = ({ city }) => {
   const [stats, setStats] = useState<Stats>();
   const { data, error } = useSWR(
-    `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`,
+    `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`,
     fetcher
   );
   if (error) return <div>Failed to load weather</div>;
